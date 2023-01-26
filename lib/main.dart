@@ -1,15 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'Fragment/AlarmFragment.dart';
-import 'Fragment/BalanceFragment.dart';
-import 'Fragment/ContactFragment.dart';
-import 'Fragment/EmailFragment.dart';
-import 'Fragment/HomeFragment.dart';
-import 'Fragment/PersonFragment.dart';
-import 'Fragment/SearchFragment.dart';
-import 'Fragment/settingsFragment.dart';
-
-
 void main() {
   runApp(const MyApp());
 }
@@ -31,49 +21,71 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatefulWidget {
+
+class MyHomePage extends StatelessWidget {
   const MyHomePage({Key? key}) : super(key: key);
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-
-
-
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(length: 8, child: Scaffold(
-      appBar: AppBar(
-        title: Text("My Apps"),
-        bottom: TabBar(
-            isScrollable: true,
-            tabs: [
-          Tab(icon: Icon(Icons.home),text:"home",),
-          Tab(icon: Icon(Icons.search),text:"search"),
-          Tab(icon: Icon(Icons.settings),text:"settings"),
-          Tab(icon: Icon(Icons.email),text:"email"),
-          Tab(icon: Icon(Icons.contact_mail),text:"contact"),
-          Tab(icon: Icon(Icons.person),text:"person"),
-          Tab(icon: Icon(Icons.access_alarm),text:"alarm"),
-          Tab(icon: Icon(Icons.account_balance),text:"balance"),
-        ]),
-      ),
-      body: TabBarView(
-          children:[
-            HomeFragment(),
-            SearchFragment(),
-            settingsFragment(),
-            EmailFragment(),
-            ContactFragment(),
-            PersonFragment(),
-            AlarmFragment(),
-            BalanceFragment(),
+    return Scaffold(
+      appBar: AppBar(title: Text("Home"),),
+      body: Center(
+        child: Column(
+          children: [
 
-          ]
 
+
+            ElevatedButton(onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>Activity1()));
+              },
+                child:Text("Go Activity 1")
+            ),
+
+
+
+
+
+            ElevatedButton(onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>Activity2()));
+              }, child:Text("Go Activity 2"),
+            ),
+
+
+
+
+          ],
+        ),
       ),
-    ));
+    );
   }
 }
+
+
+
+
+class Activity1 extends StatelessWidget {
+  const Activity1({Key? key}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text("Activity1"),),
+      body: Center(child: ElevatedButton(onPressed: (){
+        Navigator.push(context, MaterialPageRoute(builder: (context)=>Activity2()));
+      }, child: Text("Go Activity 2"))),
+    );
+  }
+}
+
+class Activity2 extends StatelessWidget {
+  const Activity2({Key? key}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text("Activity2"),),
+      body: Center(child: ElevatedButton(onPressed: (){
+        Navigator.push(context, MaterialPageRoute(builder: (context)=>Activity1()));
+      }, child: Text("Go to Activity 1")))
+
+    );
+  }
+}
+
