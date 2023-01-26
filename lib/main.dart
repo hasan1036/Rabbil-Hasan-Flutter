@@ -1,5 +1,15 @@
 import 'package:flutter/material.dart';
 
+import 'Fragment/AlarmFragment.dart';
+import 'Fragment/BalanceFragment.dart';
+import 'Fragment/ContactFragment.dart';
+import 'Fragment/EmailFragment.dart';
+import 'Fragment/HomeFragment.dart';
+import 'Fragment/PersonFragment.dart';
+import 'Fragment/SearchFragment.dart';
+import 'Fragment/settingsFragment.dart';
+
+
 void main() {
   runApp(const MyApp());
 }
@@ -29,168 +39,41 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  var MyItems = [
-
-    {
-      "img": "https://cdn.britannica.com/40/75640-050-F894DD85/tiger-Siberian.jpg", "title": "Tiger"
-    },
-    {
-      "img":"https://cdn.britannica.com/29/150929-050-547070A1/lion-Kenya-Masai-Mara-National-Reserve.jpg","title": "Lion"
-    },
-    {
-      "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Jaguar.jpg/1200px-Jaguar.jpg","title": "Panther"
-    },
-    {
-      "img":"https://www.atlanticcouncil.org/wp-content/uploads/2022/12/snow-leopard-2023-500x350.jpg","title": "leopard"
-    },
-    {
-      "img": "https://cdn.britannica.com/40/75640-050-F894DD85/tiger-Siberian.jpg","title": "Tiger"
-    },
-    {
-      "img":"https://t4.ftcdn.net/jpg/05/35/20/43/360_F_535204390_4sRYsRDp36hQ8kmUtFMhDjmoQcp9RHDZ.jpg","title": "Tiger"
-    },
-    {
-      "img":
-          "https://cdn.britannica.com/40/75640-050-F894DD85/tiger-Siberian.jpg",
-      "title": "Tiger"
-    },
-    {
-      "img":
-          "https://cdn.britannica.com/40/75640-050-F894DD85/tiger-Siberian.jpg",
-      "title": "Tiger"
-    },
-    {"img":"https://cdn.britannica.com/40/75640-050-F894DD85/tiger-Siberian.jpg","title": "Tiger"},
 
 
-    {
-      "img": "https://cdn.britannica.com/40/75640-050-F894DD85/tiger-Siberian.jpg", "title": "Tiger"
-    },
-    {
-      "img":"https://cdn.britannica.com/29/150929-050-547070A1/lion-Kenya-Masai-Mara-National-Reserve.jpg","title": "Lion"
-    },
-    {
-      "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Jaguar.jpg/1200px-Jaguar.jpg","title": "Panther"
-    },
-    {
-      "img":"https://www.atlanticcouncil.org/wp-content/uploads/2022/12/snow-leopard-2023-500x350.jpg","title": "leopard"
-    },
-    {
-      "img": "https://cdn.britannica.com/40/75640-050-F894DD85/tiger-Siberian.jpg","title": "Tiger"
-    },
-    {
-      "img":"https://t4.ftcdn.net/jpg/05/35/20/43/360_F_535204390_4sRYsRDp36hQ8kmUtFMhDjmoQcp9RHDZ.jpg","title": "Tiger"
-    },
-    {
-      "img":
-          "https://cdn.britannica.com/40/75640-050-F894DD85/tiger-Siberian.jpg",
-      "title": "Tiger"
-    },
-    {
-      "img":
-          "https://cdn.britannica.com/40/75640-050-F894DD85/tiger-Siberian.jpg",
-      "title": "Tiger"
-    },
-    {"img":"https://cdn.britannica.com/40/75640-050-F894DD85/tiger-Siberian.jpg","title": "Tiger"},
-
-
-    {
-      "img": "https://cdn.britannica.com/40/75640-050-F894DD85/tiger-Siberian.jpg", "title": "Tiger"
-    },
-    {
-      "img":"https://cdn.britannica.com/29/150929-050-547070A1/lion-Kenya-Masai-Mara-National-Reserve.jpg","title": "Lion"
-    },
-    {
-      "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Jaguar.jpg/1200px-Jaguar.jpg","title": "Panther"
-    },
-    {
-      "img":"https://www.atlanticcouncil.org/wp-content/uploads/2022/12/snow-leopard-2023-500x350.jpg","title": "leopard"
-    },
-    {
-      "img": "https://cdn.britannica.com/40/75640-050-F894DD85/tiger-Siberian.jpg","title": "Tiger"
-    },
-    {
-      "img":"https://t4.ftcdn.net/jpg/05/35/20/43/360_F_535204390_4sRYsRDp36hQ8kmUtFMhDjmoQcp9RHDZ.jpg","title": "Tiger"
-    },
-    {
-      "img":
-          "https://cdn.britannica.com/40/75640-050-F894DD85/tiger-Siberian.jpg",
-      "title": "Tiger"
-    },
-    {
-      "img":
-          "https://cdn.britannica.com/40/75640-050-F894DD85/tiger-Siberian.jpg",
-      "title": "Tiger"
-    },
-    {"img":"https://cdn.britannica.com/40/75640-050-F894DD85/tiger-Siberian.jpg","title": "Tiger"},
-
-
-    {
-      "img": "https://cdn.britannica.com/40/75640-050-F894DD85/tiger-Siberian.jpg", "title": "Tiger"
-    },
-    {
-      "img":"https://cdn.britannica.com/29/150929-050-547070A1/lion-Kenya-Masai-Mara-National-Reserve.jpg","title": "Lion"
-    },
-    {
-      "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Jaguar.jpg/1200px-Jaguar.jpg","title": "Panther"
-    },
-    {
-      "img":"https://www.atlanticcouncil.org/wp-content/uploads/2022/12/snow-leopard-2023-500x350.jpg","title": "leopard"
-    },
-    {
-      "img": "https://cdn.britannica.com/40/75640-050-F894DD85/tiger-Siberian.jpg","title": "Tiger"
-    },
-    {
-      "img":"https://t4.ftcdn.net/jpg/05/35/20/43/360_F_535204390_4sRYsRDp36hQ8kmUtFMhDjmoQcp9RHDZ.jpg","title": "Tiger"
-    },
-    {
-      "img":
-          "https://cdn.britannica.com/40/75640-050-F894DD85/tiger-Siberian.jpg",
-      "title": "Tiger"
-    },
-    {
-      "img":
-          "https://cdn.britannica.com/40/75640-050-F894DD85/tiger-Siberian.jpg",
-      "title": "Tiger"
-    },
-    {"img":"https://cdn.britannica.com/40/75640-050-F894DD85/tiger-Siberian.jpg","title": "Tiger"},
-
-
-  ];
-  mySnackBar(context, msg){
-    return ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(msg)));
-  }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return DefaultTabController(length: 8, child: Scaffold(
       appBar: AppBar(
-        title: Text("My App"),
+        title: Text("My Apps"),
+        bottom: TabBar(
+            isScrollable: true,
+            tabs: [
+          Tab(icon: Icon(Icons.home),text:"home",),
+          Tab(icon: Icon(Icons.search),text:"search"),
+          Tab(icon: Icon(Icons.settings),text:"settings"),
+          Tab(icon: Icon(Icons.email),text:"email"),
+          Tab(icon: Icon(Icons.contact_mail),text:"contact"),
+          Tab(icon: Icon(Icons.person),text:"person"),
+          Tab(icon: Icon(Icons.access_alarm),text:"alarm"),
+          Tab(icon: Icon(Icons.account_balance),text:"balance"),
+        ]),
+      ),
+      body: TabBarView(
+          children:[
+            HomeFragment(),
+            SearchFragment(),
+            settingsFragment(),
+            EmailFragment(),
+            ContactFragment(),
+            PersonFragment(),
+            AlarmFragment(),
+            BalanceFragment(),
 
+          ]
 
       ),
-
-      body: GridView.builder(
-
-
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 3,
-          crossAxisSpacing: 10,
-          childAspectRatio: 1.2,
-
-        ),
-
-        itemCount: MyItems.length,itemBuilder: (context, indext) {
-          return GestureDetector(
-            onTap: () {mySnackBar(context, MyItems[indext]["title"]);},
-            child: Container(
-              margin: EdgeInsets.all(0.0),
-              width: double.infinity,
-              height: 250,
-              child: Image.network(MyItems[indext]["img"]!,fit:BoxFit.fill ,),
-            ),
-          );
-        },
-      ),
-    );
+    ));
   }
 }
