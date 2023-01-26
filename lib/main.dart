@@ -30,6 +30,100 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   var MyItems = [
+
+    {
+      "img": "https://cdn.britannica.com/40/75640-050-F894DD85/tiger-Siberian.jpg", "title": "Tiger"
+    },
+    {
+      "img":"https://cdn.britannica.com/29/150929-050-547070A1/lion-Kenya-Masai-Mara-National-Reserve.jpg","title": "Lion"
+    },
+    {
+      "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Jaguar.jpg/1200px-Jaguar.jpg","title": "Panther"
+    },
+    {
+      "img":"https://www.atlanticcouncil.org/wp-content/uploads/2022/12/snow-leopard-2023-500x350.jpg","title": "leopard"
+    },
+    {
+      "img": "https://cdn.britannica.com/40/75640-050-F894DD85/tiger-Siberian.jpg","title": "Tiger"
+    },
+    {
+      "img":"https://t4.ftcdn.net/jpg/05/35/20/43/360_F_535204390_4sRYsRDp36hQ8kmUtFMhDjmoQcp9RHDZ.jpg","title": "Tiger"
+    },
+    {
+      "img":
+          "https://cdn.britannica.com/40/75640-050-F894DD85/tiger-Siberian.jpg",
+      "title": "Tiger"
+    },
+    {
+      "img":
+          "https://cdn.britannica.com/40/75640-050-F894DD85/tiger-Siberian.jpg",
+      "title": "Tiger"
+    },
+    {"img":"https://cdn.britannica.com/40/75640-050-F894DD85/tiger-Siberian.jpg","title": "Tiger"},
+
+
+    {
+      "img": "https://cdn.britannica.com/40/75640-050-F894DD85/tiger-Siberian.jpg", "title": "Tiger"
+    },
+    {
+      "img":"https://cdn.britannica.com/29/150929-050-547070A1/lion-Kenya-Masai-Mara-National-Reserve.jpg","title": "Lion"
+    },
+    {
+      "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Jaguar.jpg/1200px-Jaguar.jpg","title": "Panther"
+    },
+    {
+      "img":"https://www.atlanticcouncil.org/wp-content/uploads/2022/12/snow-leopard-2023-500x350.jpg","title": "leopard"
+    },
+    {
+      "img": "https://cdn.britannica.com/40/75640-050-F894DD85/tiger-Siberian.jpg","title": "Tiger"
+    },
+    {
+      "img":"https://t4.ftcdn.net/jpg/05/35/20/43/360_F_535204390_4sRYsRDp36hQ8kmUtFMhDjmoQcp9RHDZ.jpg","title": "Tiger"
+    },
+    {
+      "img":
+          "https://cdn.britannica.com/40/75640-050-F894DD85/tiger-Siberian.jpg",
+      "title": "Tiger"
+    },
+    {
+      "img":
+          "https://cdn.britannica.com/40/75640-050-F894DD85/tiger-Siberian.jpg",
+      "title": "Tiger"
+    },
+    {"img":"https://cdn.britannica.com/40/75640-050-F894DD85/tiger-Siberian.jpg","title": "Tiger"},
+
+
+    {
+      "img": "https://cdn.britannica.com/40/75640-050-F894DD85/tiger-Siberian.jpg", "title": "Tiger"
+    },
+    {
+      "img":"https://cdn.britannica.com/29/150929-050-547070A1/lion-Kenya-Masai-Mara-National-Reserve.jpg","title": "Lion"
+    },
+    {
+      "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Jaguar.jpg/1200px-Jaguar.jpg","title": "Panther"
+    },
+    {
+      "img":"https://www.atlanticcouncil.org/wp-content/uploads/2022/12/snow-leopard-2023-500x350.jpg","title": "leopard"
+    },
+    {
+      "img": "https://cdn.britannica.com/40/75640-050-F894DD85/tiger-Siberian.jpg","title": "Tiger"
+    },
+    {
+      "img":"https://t4.ftcdn.net/jpg/05/35/20/43/360_F_535204390_4sRYsRDp36hQ8kmUtFMhDjmoQcp9RHDZ.jpg","title": "Tiger"
+    },
+    {
+      "img":
+          "https://cdn.britannica.com/40/75640-050-F894DD85/tiger-Siberian.jpg",
+      "title": "Tiger"
+    },
+    {
+      "img":
+          "https://cdn.britannica.com/40/75640-050-F894DD85/tiger-Siberian.jpg",
+      "title": "Tiger"
+    },
+    {"img":"https://cdn.britannica.com/40/75640-050-F894DD85/tiger-Siberian.jpg","title": "Tiger"},
+
+
     {
       "img": "https://cdn.britannica.com/40/75640-050-F894DD85/tiger-Siberian.jpg", "title": "Tiger"
     },
@@ -71,13 +165,25 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text("My App"),
+
+
       ),
-      body: ListView.builder(
+
+      body: GridView.builder(
+
+
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 3,
+          crossAxisSpacing: 10,
+          childAspectRatio: 1.2,
+
+        ),
+
         itemCount: MyItems.length,itemBuilder: (context, indext) {
           return GestureDetector(
             onTap: () {mySnackBar(context, MyItems[indext]["title"]);},
             child: Container(
-              margin: EdgeInsets.all(8.0),
+              margin: EdgeInsets.all(0.0),
               width: double.infinity,
               height: 250,
               child: Image.network(MyItems[indext]["img"]!,fit:BoxFit.fill ,),
