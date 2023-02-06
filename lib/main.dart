@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(),
+      home: const MyHomePage(),
     );
   }
 }
@@ -26,16 +26,69 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Home"),
+        title: Center(child: Text("Expandable & Flexible")),
       ),
-      body: Center(
-        child: FractionallySizedBox(
-          widthFactor: 0.5,
-          heightFactor: 0.3,
-          child: Container(
-            color: Colors.green,
-          ),
-        ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+           Expanded(
+             flex: 1,
+             child: Container(
+             color: Colors.green,
+           ),),
+          Expanded(
+            flex: 1,
+            child: Container(
+             color: Colors.red,
+           ),),
+          Expanded(
+            flex: 1,
+            child: Container(
+            color: Colors.blue,
+          ),),
+          Expanded(
+            flex: 1,
+            child: Container(
+            color: Colors.cyan,
+          ),),
+           Expanded(
+             flex: 1,
+             child: Container(
+             color: Colors.green,
+           ),),
+          Expanded(
+            flex: 3,
+            child: Container(
+             // color: Colors.red,
+
+           ),),
+          Expanded(
+            flex: 1,
+            child: Row(
+              children: [
+                Expanded(child: Container(
+                  color: Colors.orange,
+                )),
+                Expanded(
+                    flex: 2,
+                    child: Container(
+                  color: Colors.black,
+                      child:ElevatedButton(onPressed: (){}, child: Text("Hasan"))
+                      
+                )),
+                Expanded(child: Container(
+                  color: Colors.orange,
+                )),
+              ],
+
+          ),),
+          Expanded(
+            flex: 1,
+            child: Container(
+            color: Colors.cyan,
+          ),),
+
+        ],
       ),
     );
   }
