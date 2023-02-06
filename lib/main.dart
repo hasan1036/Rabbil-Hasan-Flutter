@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rabbirl_hasan_1/style.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,72 +25,23 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    // var width = MediaQuery.of(context).size.width;
+    // var height = MediaQuery.of(context).size.height;
+    // var orientasion = MediaQuery.of(context).orientation;
+
     return Scaffold(
       appBar: AppBar(
         title: Center(child: Text("Expandable & Flexible")),
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-           Expanded(
-             flex: 1,
-             child: Container(
-             color: Colors.green,
-           ),),
-          Expanded(
-            flex: 1,
-            child: Container(
-             color: Colors.red,
-           ),),
-          Expanded(
-            flex: 1,
-            child: Container(
-            color: Colors.blue,
-          ),),
-          Expanded(
-            flex: 1,
-            child: Container(
-            color: Colors.cyan,
-          ),),
-           Expanded(
-             flex: 1,
-             child: Container(
-             color: Colors.green,
-           ),),
-          Expanded(
-            flex: 3,
-            child: Container(
-             // color: Colors.red,
+          Center(child: Text("Hello Flutter", style: HeadLine(context),)),
 
-           ),),
-          Expanded(
-            flex: 1,
-            child: Row(
-              children: [
-                Expanded(child: Container(
-                  color: Colors.orange,
-                )),
-                Expanded(
-                    flex: 2,
-                    child: Container(
-                  color: Colors.black,
-                      child:ElevatedButton(onPressed: (){}, child: Text("Hasan"))
-                      
-                )),
-                Expanded(child: Container(
-                  color: Colors.orange,
-                )),
-              ],
-
-          ),),
-          Expanded(
-            flex: 1,
-            child: Container(
-            color: Colors.cyan,
-          ),),
 
         ],
-      ),
+      )
     );
   }
 }
