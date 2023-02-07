@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rabbirl_hasan_1/style.dart';
+import 'package:responsive_grid/responsive_grid.dart';
 
 void main() {
   runApp(const MyApp());
@@ -34,14 +35,80 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         title: Center(child: Text("Expandable & Flexible")),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Center(child: Text("Hello Flutter", style: HeadLine(context),)),
+      
+      body:SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: ResponsiveGridRow(children: [
 
+
+          ResponsiveGridCol(
+            lg: 12,
+              child:Container(
+                height: 100,
+                color: Color(0xffffc467),
+              ),
+          ),
+
+
+          ResponsiveGridCol(
+           xl: 4, lg: 6, md: 8, sm: 9, xs: 12,
+              child:Container(
+                height: 100,
+                color: Color(0xff543400),
+              ),
+          ),
+
+          ResponsiveGridCol(
+           xl: 4, lg: 6, md: 8, sm: 9, xs: 12,
+              child:Container(
+                height: 100,
+                color: Color(0xff00ca07),
+              ),
+          ),
+
+          ResponsiveGridCol(
+           xl: 4, lg: 6, md: 8, sm: 9, xs: 12,
+              child:Container(
+                height: 100,
+                color: Color(0xff0117e2),
+              ),
+          ),
+
+          ResponsiveGridCol(
+           xl: 4, lg: 6, md: 8, sm: 9, xs: 12,
+              child:Container(
+                height: 100,
+                color: Color(0xfff40000),
+              ),
+          ),
+
+          ResponsiveGridCol(
+           xl: 4, lg: 6, md: 8, sm: 9, xs: 12,
+              child:Container(
+                height: 100,
+                color: Color(0xff00ffd4),
+              ),
+          ),
+
+          ResponsiveGridCol(
+           xl: 4, lg: 6, md: 8, sm: 9, xs: 12,
+              child:Container(
+                height: 100,
+                color: Color(0xffbe00fe),
+              ),
+          ),
+
+          ResponsiveGridCol(
+           xl: 4, lg: 6, md: 8, sm: 9, xs: 12,
+              child:Container(
+                height: 100,
+                color: Color(0xff45ff16),
+              ),
+          ),
 
         ],
-      )
+    ),
+      ),
     );
   }
 }
