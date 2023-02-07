@@ -2,24 +2,31 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
-TextStyle HeadLine(context){
+InputDecoration AppInPutStyle(label){
+  
+  return InputDecoration(
+   contentPadding: EdgeInsets.fromLTRB(20, 10, 10, 20),
+    filled: true,
+    fillColor: Colors.white30,
+    border: OutlineInputBorder(),
+    labelText: label
+  );
+  
+}
 
-  var width = MediaQuery.of(context).size.width;
-  if(width<500){
+TextStyle HeadTextStyle(){
+  return TextStyle(
+    fontSize: 24,
+    fontWeight: FontWeight.w500,
+  );
+}
 
-    return TextStyle(
-      color: Color(0xff000000),
-      fontSize: 34,
-    );
-  }
-
-  else{
-    return TextStyle(
-      color: Color(0xff09ff3b),
-      fontSize: 65,
-    );
-  }
-
-
-
+ButtonStyle AppButtonStyle(){
+  return ElevatedButton.styleFrom(
+    padding: EdgeInsets.all(22),
+    backgroundColor: Colors.green,
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.all(Radius.circular(4))
+    )
+  );
 }

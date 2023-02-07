@@ -1,9 +1,10 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:rabbirl_hasan_1/style.dart';
 
 void main(){
-  runApp(MyApp());
+  runApp( MyApp());
 }
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -15,7 +16,6 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
 
@@ -24,44 +24,70 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
- int countNumber = 0;
+
+  Map<String, double> FormValue = {"Num1":0, "Num2":0, "Num3":0 };
+  double SUM = 0;
 
 
   @override
   Widget build(BuildContext context) {
+
+    MyInputOnChange(InputKey, InputValue){
+      setState(() {
+        FormValue.update(InputKey, (value) =>  double.parse(InputValue));
+      });
+    }
+
+
+    AddAllNumber(){
+      setState((){
+        SUM =  FormValue['Num1']! + FormValue['Num1']! + FormValue['Num1']!;
+      });
+
+    }
+
+
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Counter App"),
-      ),
+      appBar: AppBar(title: Text("Add"),),
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          children: [
+            Text(SUM.toString(), style: HeadTextStyle(),),
+            SizedBox(height: 20, ),
+            TextFormField(onChanged:(value){
+              // Set Value to Num1
+              MyInputOnChange("Num1", value);
 
+            } ,    decoration: AppInPutStyle("First Number"),
+            ),
 
+            SizedBox(height: 20,),
+            TextFormField( onChanged:(value){
+              // Set Value to Num2
+              MyInputOnChange("Num3", value);
 
-      body: Center(child:Text(countNumber.toString()),
-      ),
-      floatingActionButton: FloatingActionButton(onPressed: (){ setState(() {countNumber = countNumber+1;});},
-        child: Icon(Icons.add),
+            } ,    decoration: AppInPutStyle("Second Number"),),
+            SizedBox(height: 20,),
+            TextFormField(onChanged:(value){
+              // Set Value to Num1
+              MyInputOnChange("Num3", value);
+
+            } ,decoration: AppInPutStyle("Third Number"),),
+            SizedBox(height: 20,),
+           Container(
+              width: double.infinity,
+              child:
+                ElevatedButton(style:AppButtonStyle(), onPressed: (){
+                  AddAllNumber();
+                }, child: Text("Add"),),
+
+            ),
+          ],
+
+        ),
       ),
     );
-
-
-
-
-
-
   }
 }
-
-
-
-
-//
-// class MyHomePage extends StatefulWidget{
-//
-//   @override
-//   State<StatefulWidget> createState() {
-//    return MyHomePageUI();
-//   }
-// }
-//
-// class MyHomePageUI extends State<>
 
